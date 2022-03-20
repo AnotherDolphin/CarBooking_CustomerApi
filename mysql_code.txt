@@ -1,0 +1,60 @@
+// THIS CODE CAN BE USED TO RECREATE DB STRUCTURE
+
+CREATE TABLE `customers` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `first_name` varchar(20),
+  `last_name` varchar(20),
+  `phone` varchar(15),
+  `email` varchar(50),
+  `city` varchar(20),
+  `street` varchar(30),
+  PRIMARY KEY (`id`)
+);
+
+CREATE TABLE `vehicle_types` (
+  `type` varchar(15),
+  `max_passngers` int,
+  PRIMARY KEY (`type`)
+);
+
+CREATE TABLE `cars` (
+  `id` INT,
+  `vehicle_type` varchar(15),
+  `make` varchar(20),
+  `model` varchar(20),
+  `year` int,
+  `color` varchar(20),
+  `rent` decimal(7,2),
+  `booked_until` date,
+  PRIMARY KEY (`id`),
+  FOREIGN KEY (`vehicle_type`) REFERENCES `vehicle_types`(`type`)
+);
+
+CREATE TABLE `bookings` (
+  `id` int,
+  `customer_id` int,
+  `car_id` int,
+  `pre_book` date,
+  `book_date` date,
+  `return_date` date,
+  PRIMARY KEY (`id`),
+  FOREIGN KEY (`customer_id`) REFERENCES `customers`(`id`),
+  FOREIGN KEY (`car_id`) REFERENCES `cars`(`id`)
+);
+
+CREATE TABLE `invoices` (
+  `booking_id` int,
+  `issue_date` date,
+  `paid_on` date,
+  `total_days` int,
+  `amount` decimal(9,2),
+  PRIMARY KEY (`booking_id`)
+);
+
+CREATE TABLE `reports` (
+  `day` date,
+  `total_bookings` int,
+  `sales` decimal(9,2),
+  PRIMARY KEY (`day`),
+);
+

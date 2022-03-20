@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <a href="get">
+        <h3>Get Customer Details</h3>
+    </a>
+    <a href="add">
+        <h3>Add a New Customer</h3>
+    </a>
+    <a href="update">
+        <h3>Update Customer Details</h3>
+    </a>
+    <a href="delete">
+        <h3>Delete Existing Customer</h3>
+    </a>
+    <a href="search" class="bonus">
+        <h3>Search for a Customer</h3>
+    </a>
+</body>
+</html>
+
+<style>
+    body {
+        background: #ffffab;
+        width: 500px;
+        margin-inline: auto;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+        /* align-items: center; */
+        justify-content: center;
+        font-family: sans-serif;
+    }
+
+    a {
+        text-decoration: none;
+        background: #7a2121;
+        color: #fff;
+        padding: 1rem 2rem;
+        border-radius: 1rem;
+    }
+
+    .bonus {
+        background: teal;
+    }
+
+    h3 {
+        margin-left: 50%;
+        transform: translateX(-50%);
+        font-weight: normal;
+    }
+</style>

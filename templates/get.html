@@ -1,0 +1,80 @@
+<html>
+<body>
+    <h1>Get Customer Details</h1>
+
+    <form method="get" action="/get">
+        Customer ID: <br> <input type="text" name="id"/>
+        <input type="submit" value="Get">
+    </form>
+
+    <nav>
+        <a href="/get/all">list all Customers</a>
+        <a href="/">Return Home</a>
+    </nav>
+
+    <div class="output">
+        {% if data is string %}
+            <p>{{ data }}</p>
+        {% else %}
+            <table>
+            <tr><td>ID</td><td>first_name</td><td>last_name</td><td>phone</td><td>email</td><td>city</td><td>street</td></tr>
+            {% for row in data %}
+                <tr>
+                    {% for x in row %}
+                        <td>{{ x }}</td>
+                    {% endfor %}
+                </tr>
+            {% endfor %}
+            </table>
+        {% endif %}
+    </div>
+    
+</body>
+</html>
+<style>
+    .output {
+        background: #fff;
+        border-radius: 1rem;
+        padding: 1rem;
+    }
+
+    table {
+        border-collapse: separate;
+        border-spacing: 15px;
+    }
+
+    tr:first-child {
+        background: lightblue;
+        text-align: center;
+    }
+
+    body {
+        font-family: sans-serif;
+        background-color: antiquewhite;
+        display: flex;
+        gap: 2rem;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    form {
+        /* display: flex; */
+    }
+
+    input[type='submit'] {
+        text-decoration: none;
+        background: #7a2121;
+        color: #fff;
+        padding: 0.5rem 3rem;
+        border-radius: 2rem;
+    }
+
+    a {
+        text-decoration: none;
+        background: teal;
+        color: #fff;
+        padding: 0.5rem 2rem;
+        border-radius: 1rem;
+    }
+</style>

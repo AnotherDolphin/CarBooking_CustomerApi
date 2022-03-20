@@ -1,0 +1,70 @@
+<html>
+<body>
+    <h1>Update Customer Info</h1>
+    <div>Enter Customer ID: <input id="id" type="text"></div>
+    <div>
+        Select the Parameter to be Updated:
+        <select name="cars" id="cars">
+            <option value="first_name">first_name</option>
+            <option value="last_name">last_name</option>
+            <option value="phone">phone</option>
+            <option value="email">email</option>
+            <option value="city">city</option>
+            <option value="street">street</option>
+        </select>
+    </div>
+    <div>New Value: <input id="val" type="text"></div>
+    <button onclick="sendRequest()">Submit</button>
+    <a href="/">Return Home</a>
+    
+</body>
+</html>
+<script>
+    // using js fetch for PUT request because HTML doesn't support it
+    const sendRequest = () => {
+        let id = parseInt(document.getElementById('id').value)
+        let attr = document.querySelector('select').value
+        let val = document.getElementById('val').value
+        let data = {'id': id, 'attr': attr, 'val': val}
+        if(!id) window.alert('please enter a numerical ID')
+        else fetch(`/update`, { 
+            method: 'PUT', 
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(data)})
+            .then(res => res.text()
+            .then(res=> window.alert(res)))
+    }
+</script>
+<style>
+    select {
+        font-size: 1rem;
+        padding: 0.5rem 1rem;
+    }
+
+    button {
+        background: #7a2121;
+        color: #fff;
+        padding: 0.5rem 2rem;
+        border-radius: 2rem;
+        cursor: pointer;
+    }
+
+    body {
+        font-family: sans-serif;
+        background-color: antiquewhite;
+        display: flex;
+        gap: 2rem;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    a {
+        text-decoration: none;
+        background: teal;
+        color: #fff;
+        padding: 0.5rem 2rem;
+        border-radius: 1rem;
+    }
+</style>
