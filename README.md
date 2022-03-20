@@ -46,7 +46,7 @@ Confirmation page for POST (add) reqeusts:
 Successful PUT/DELETE operations are confimed dinamically with a notifcation:
 ![delete-res](https://user-images.githubusercontent.com/46499432/159170236-936e4b47-1a4d-4e20-b8a0-db8d5f0606c1.png)
 
-# UASGE
+# USAGE
 
 The app is fully functional. All that needs to be edited is the .yaml file for DB credentials and the SQL be code executed on an MySQL server.
 
