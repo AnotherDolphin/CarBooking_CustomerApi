@@ -2,7 +2,7 @@
 Flask Customer data  CRUD app for Car Booking system
 
 # ERD for the Car Booking DB Design
-including relationships, contraints, and data types
+including relationships, constraints, and data types
 
 ![ERD](https://user-images.githubusercontent.com/46499432/159168138-835d9b6b-2f0d-4255-bec5-ae4883ee83b5.png)
 Full, executable SQL code included in repo root.
@@ -19,7 +19,7 @@ Fully integrated app with Flask backend connected to MySQL database, a simple Ji
 - `/get/<id>`: get customer details by id
 - `/update`: to update existing customer, with a GET route for input UI and a PUT route for hadling js fetch put reqeuests
 - `/delete`: (GET) render deletion input interface, with real-time confirmation per request
-- `/delete/<id>`: handles js fetch DELETE requests and perform deletions, rejects browser url GET requests
+- `/delete/<id>`: handles js fetch DELETE requests and performs deletions, rejects browser url GET requests
 - 
 # Front-end features:
 
@@ -43,10 +43,10 @@ Delete customer:
 Confirmation page for POST (add) reqeusts:
 ![success](https://user-images.githubusercontent.com/46499432/159170391-104c85c0-2d11-4a47-b999-3f2aa76da056.png)
 
-Successful PUT/DELETE operations are confimed dinamically with a notifcation:
+Successful PUT/DELETE operations are confimed dynamically with a notifcation:
 ![delete-res](https://user-images.githubusercontent.com/46499432/159170236-936e4b47-1a4d-4e20-b8a0-db8d5f0606c1.png)
 
 # USAGE
 
-The app is fully functional. All that needs to be edited is the .yaml file for DB credentials and the SQL be code executed on an MySQL server.
+The app is fully functional. All that needs to be edited is the .yaml file for DB credentials and the SQL code be executed on a live MySQL server.
 
